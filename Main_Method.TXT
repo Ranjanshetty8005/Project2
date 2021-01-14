@@ -1,0 +1,40 @@
+public class Client {
+
+	public static void main(String[] args) {
+		Bank bank=new IndianBank();
+		try
+		{
+			System.out.println(bank.createAccount(11,10000));
+			System.out.println(bank.createAccount(12,20000));
+			
+			System.out.println("Balance after withdrawal is "+ bank.withdrawAmount(12, 15000));
+			
+			int[] a = bank.fundTransfer(11, 12, 4000);
+			
+			System.out.println("Sender Balance = " + a[0] );
+			System.out.println("Receiver Balance = " + a[1]);
+			
+			System.out.println("After deposit balance is " + bank.depositAmount(12, 2500));
+			
+			System.out.println(bank.createAccount(13, 200));
+			
+		}
+		catch(InvalidAccountNumberException iame)
+		{
+			System.out.println("Invalid Account number!!!");
+		}
+		
+		catch(InsufficientBalanceAmountException isbe)
+		{
+			System.out.println("Insufficient balance!!!");
+		}
+		
+		catch(MinimumBalanceException isb)
+		{
+			System.out.println("Insufficient opening balance!!!");
+		}
+		
+
+	}
+
+}
