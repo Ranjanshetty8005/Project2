@@ -1,0 +1,12 @@
+public interface Bank {
+
+	public String createAccount(int accountNumber,int amount) throws MinimumBalanceException;
+	
+	public Account searchAccount(int accountNumber) throws InvalidAccountNumberException;
+	
+	public int withdrawAmount(int accountNumber, int amount) throws InvalidAccountNumberException,InsufficientBalanceAmountException;
+	
+	public int[] fundTransfer(int senderAccount, int receiverAccount, int transferAmount) throws InsufficientBalanceAmountException, InvalidAccountNumberException;
+	
+	public int depositAmount(int accountNumber, int amount) throws InvalidAccountNumberException;
+}
